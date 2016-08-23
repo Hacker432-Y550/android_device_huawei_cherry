@@ -19,7 +19,7 @@ DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
 # Screen density
 PRODUCT_AAPT_CONFIG := normal
-PRODUCT_AAPT_PREF_CONFIG := xhdpi
+PRODUCT_AAPT_PREF_CONFIG := hdpi
 
 # media_profiles and media_codecs xmls for 8916
 PRODUCT_COPY_FILES += \
@@ -252,7 +252,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.radio.apm_sim_not_pwdn=1 \
 	persist.radio.sib16_support=1 \
 	ro.frp.pst=/dev/block/bootdevice/by-name/config \
-	ro.sf.lcd_density=320 \
+	ro.sf.lcd_density=240 \
 	persist.sys.usb.config=mtp
 
 PRODUCT_PROPERTY_OVERRIDES += \
