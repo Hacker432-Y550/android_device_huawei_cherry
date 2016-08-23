@@ -40,13 +40,13 @@ PRODUCT_PACKAGES += \
 
 # Audio calibration
 PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/audio/Bluetooth_cal.acdb:system/etc/Bluetooth_cal.acdb \
-	$(LOCAL_PATH)/audio/General_cal.acdb:system/etc/General_cal.acdb \
-	$(LOCAL_PATH)/audio/Global_cal.acdb:system/etc/Global_cal.acdb \
-	$(LOCAL_PATH)/audio/Handset_cal.acdb:system/etc/Handset_cal.acdb \
-	$(LOCAL_PATH)/audio/Hdmi_cal.acdb:system/etc/Hdmi_cal.acdb \
-	$(LOCAL_PATH)/audio/Headset_cal.acdb:system/etc/Headset_cal.acdb \
-	$(LOCAL_PATH)/audio/Speaker_cal.acdb:system/etc/Speaker_cal.acdb
+	$(LOCAL_PATH)/audio/Bluetooth_cal.acdb:system/etc/sound_param/y550/Bluetooth_cal.acdb \
+	$(LOCAL_PATH)/audio/General_cal.acdb:system/etc/sound_param/y550/General_cal.acdb \
+	$(LOCAL_PATH)/audio/Global_cal.acdb:system/etc/sound_param/y550/Global_cal.acdb \
+	$(LOCAL_PATH)/audio/Handset_cal.acdb:system/etc/sound_param/y550/Handset_cal.acdb \
+	$(LOCAL_PATH)/audio/Hdmi_cal.acdb:system/etc/sound_param/y550/Hdmi_cal.acdb \
+	$(LOCAL_PATH)/audio/Headset_cal.acdb:system/etc/sound_param/y550/Headset_cal.acdb \
+	$(LOCAL_PATH)/audio/Speaker_cal.acdb:system/etc/sound_param/y550/Speaker_cal.acdb
 
 # Feature definition files for msm8916
 PRODUCT_COPY_FILES += \
