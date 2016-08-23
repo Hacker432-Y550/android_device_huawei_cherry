@@ -17,10 +17,10 @@
 # Product-specific compile-time definitions.
 #
 
-LOCAL_PATH := device/huawei/cherry
+LOCAL_PATH := device/huawei/y550
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := c8817d,cherry,CHERRY,C8817D,C8817E,G621-TL00,G620S-UL00,Che1-CL20,Che1-CL10,Che1-L04
+TARGET_OTA_ASSERT_DEVICE := c8817d,cherry,CHERRY,C8817D,C8817E,G621-TL00,G620S-UL00,Che1-CL20,Che1-CL10,Che1-L04,y550,Y550,Y550-L01,Y550-L02,Y550-L03
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
@@ -69,7 +69,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 BOARD_CHARGER_SHOW_PERCENTAGE := true
 
 # CMHW
-BOARD_HARDWARE_CLASS := device/huawei/cherry/cmhw
+BOARD_HARDWARE_CLASS := $(LOCAL_PATH)/cmhw
 
 # Enables CSVT
 TARGET_USES_CSVT := true
@@ -104,19 +104,24 @@ USE_OPENGL_RENDERER := true
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_msm
 TARGET_PLATFORM_DEVICE_BASE := /devices/soc.0/
-TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_cherry.c
+TARGET_LIBINIT_DEFINES_FILE := $(LOCAL_PATH)/init/init_y550.c
 TARGET_UNIFIED_DEVICE := true
 
 # Kernel
-BOARD_KERNEL_BASE        := 0x80000000
-BOARD_KERNEL_PAGESIZE    := 2048
-BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
-BOARD_RAMDISK_OFFSET     := 0x02000000
-BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x3F ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk androidboot.selinux=permissive
 BOARD_KERNEL_SEPARATED_DT := true
+BOARD_KERNEL_BASE := 0x80000000
+BOARD_KERNEL_PAGESIZE := 2048
+BOARD_KERNEL_TAGS_OFFSET := 0x01E00000
+BOARD_RAMDISK_OFFSET := 0x02000000
+BOARD_DTBTOOL_ARGS := -2
+TARGET_KERNEL_ARCH := arm
+
+# Kernel inline build
 TARGET_KERNEL_SOURCE := kernel/huawei/msm8916
-TARGET_KERNEL_CONFIG := cyanogenmod_cherry_defconfig
-BOARD_CUSTOM_BOOTIMG_MK := $(LOCAL_PATH)/mkbootimg.mk
+TARGET_KERNEL_CONFIG := g620s_defconfig
+TARGET_VARIANT_CONFIG := g620s_defconfig
+TARGET_SELINUX_CONFIG := g620s_defconfig
 
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
@@ -127,15 +132,11 @@ TARGET_USES_LOGD := false
 # Partitions
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
-BOARD_CACHEIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_PERSISTIMAGE_FILE_SYSTEM_TYPE := ext4
-BOARD_BOOTIMAGE_PARTITION_SIZE := 0x01400000 # (20M)
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x01900000 # (25M)
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1288491008
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 1860648960
-BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456
-BOARD_PERSISTIMAGE_PARTITION_SIZE := 33554432
-BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
+BOARD_FLASH_BLOCK_SIZE := 131072
+BOARD_BOOTIMAGE_PARTITION_SIZE := 0x105c0000
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 0x105c0000
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 1342177280
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 1795144704
 
 # Power
 TARGET_POWERHAL_VARIANT := qcom
@@ -155,7 +156,7 @@ PROTOBUF_SUPPORTED := true
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    device/huawei/cherry/sepolicy
+    device/huawei/y550/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     bootanim.te \
@@ -177,7 +178,7 @@ MALLOC_IMPL := dlmalloc
 # Vold
 TARGET_USE_CUSTOM_LUN_FILE_PATH := /sys/devices/platform/msm_hsusb/gadget/lun%d/file
 BOARD_VOLD_DISC_HAS_MULTIPLE_MAJORS := true
-BOARD_VOLD_MAX_PARTITIONS := 65
+BOARD_VOLD_MAX_PARTITIONS := 40
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
@@ -193,4 +194,4 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/huawei/cherry/BoardConfigVendor.mk
+-include vendor/huawei/msm8916_32/BoardConfigVendor.mk

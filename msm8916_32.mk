@@ -268,4 +268,4 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	sys.io.scheduler=bfq
 
 # Inherit proprietary blobs
-$(call inherit-product-if-exists, vendor/huawei/cherry/cherry-vendor.mk)
+$(call inherit-product-if-exists, vendor/huawei/msm8916_32/msm8916_32-vendor.mk)
