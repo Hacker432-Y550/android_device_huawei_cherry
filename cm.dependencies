@@ -15,4 +15,8 @@
     "repository": "android_external_mm-dash",
     "target_path": "external/mm-dash"
   }
+  {
+    "repository": "SnapdragonCamera",
+    "target_path": "device/huawei/y550/SnapdragonCamera"
+  }
 ]

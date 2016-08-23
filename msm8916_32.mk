@@ -124,7 +124,8 @@ PRODUCT_PACKAGES += \
 	mm-qcamera-app \
 	camera.msm8916 \
 	libmmjpeg_interface \
-	libqomx_core
+	libqomx_core \
+	SnapdragonCamera
 
 # Charger
 PRODUCT_PACKAGES += \
