@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/huawei/cherry
+LOCAL_PATH := device/huawei/y550
 
 DEVICE_PACKAGE_OVERLAYS := $(LOCAL_PATH)/overlay
 
