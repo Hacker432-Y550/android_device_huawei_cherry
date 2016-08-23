@@ -12,4 +12,3 @@
 /devices/soc.0/7864900.sdhci/mmc_host        auto         auto    nosuid,nodev         wait,voldmanaged=sdcard1:auto,noemulatedsd
 /devices/platform/msm_hsusb                  auto         auto    nosuid,nodev         wait,voldmanaged=usbotg:auto,noemulatedsd
 /dev/block/zram0                             none         swap    defaults zramsize=536870912
-/dev/block/bootdevice/by-name/config         /frp         emmc    defaults             defaults

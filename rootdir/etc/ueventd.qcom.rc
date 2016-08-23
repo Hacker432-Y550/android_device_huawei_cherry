@@ -150,7 +150,7 @@
 /dev/msm_preproc_ctl      0660   system     audio
 /dev/msm_rtac             0660   system     audio
 /dev/msm_voicememo        0660   system     audio
-/dev/radio0               0640   fm_radio   fm_radio
+/dev/radio0               0660   system     radio
 /dev/smd3                 0660   bluetooth  net_bt_stack
 /dev/smd2                 0660   bluetooth  net_bt_stack
 /dev/ttyHSL1              0660   system     system
@@ -214,6 +214,7 @@
 /dev/wcnss_ctrl           0660   system     system
 #nfc permissions
 /dev/nfc-nci              0660    nfc         nfc
+/dev/nq-nci               0660    nfc         nfc
 /dev/assd                 0660    nfc         nfc
 
 # UIO devices
@@ -237,3 +238,4 @@
 
 # Add device block for FRP
 /dev/block/bootdevice/by-name/config    0660   system     system
+/dev/block/bootdevice/by-name/oeminfo   0660   system     system

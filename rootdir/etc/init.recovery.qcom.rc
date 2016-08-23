@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2016	Hacker432
+# Copyright (C) 2015  Rudolf Tammekivi
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,8 +14,12 @@
 # limitations under the License.
 #
 
-# Create symlink spn-conf.xml which points to selective-spn-conf.xml
-# since Huawei's modem does not pull in network operator names
-$(shell mkdir -p $(TARGET_OUT)/etc; \
-    ln -sf /system/etc/selective-spn-conf.xml \
-	   $(TARGET_OUT)/etc/spn-conf.xml)
+on boot
+    chown root system /sys/class/power_supply/bms/current_now
+    chown root system /sys/class/power_supply/bms/voltage_ocv
+    chmod 0664 /sys/class/power_supply/bms/current_now
+    chmod 0664 /sys/class/power_supply/bms/voltage_ocv
+
+service vm_bms /sbin/vm_bms
+    user root
+    group root
