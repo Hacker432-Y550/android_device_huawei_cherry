@@ -19,3 +19,10 @@
 $(shell mkdir -p $(TARGET_OUT)/etc; \
     ln -sf /system/etc/selective-spn-conf.xml \
 	   $(TARGET_OUT)/etc/spn-conf.xml)
+
+#Create symbolic links
+$(shell mkdir -p $(TARGET_OUT_ETC)/firmware/wlan/prima; \
+        ln -sf /system/etc/wifi/WCNSS_wlan_dictionary.dat \
+        $(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_wlan_dictionary.dat; \
+        ln -sf /system/etc/wifi/WCNSS_qcom_cfg.ini \
+$(TARGET_OUT_ETC)/firmware/wlan/prima/WCNSS_qcom_cfg.ini)
