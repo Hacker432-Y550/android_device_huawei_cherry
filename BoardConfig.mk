@@ -124,9 +124,6 @@ TARGET_KERNEL_CONFIG := g620s_defconfig
 TARGET_VARIANT_CONFIG := g620s_defconfig
 TARGET_SELINUX_CONFIG := g620s_defconfig
 
-# Lights
-TARGET_PROVIDES_LIBLIGHT := true
-
 # Logging
 TARGET_USES_LOGD := false
 
