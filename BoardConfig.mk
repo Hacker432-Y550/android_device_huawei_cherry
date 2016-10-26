@@ -17,7 +17,10 @@
 # Product-specific compile-time definitions.
 #
 
-VENDOR_PATH := device/huawei/msm8916-common
+LOCAL_PATH := device/huawei/y550
+
+# Assert
+TARGET_OTA_ASSERT_DEVICE := c8817d,cherry,CHERRY,C8817D,C8817E,G621-TL00,G620S-UL00,Che1-CL20,Che1-CL10,Che1-L04,y550,Y550,Y550-L01,Y550-L02,Y550-L03
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8916
@@ -53,7 +56,7 @@ USE_CUSTOM_AUDIO_POLICY := 1
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
 
 # Camera
 USE_DEVICE_SPECIFIC_CAMERA := true
@@ -69,8 +72,7 @@ BOARD_HAL_STATIC_LIBRARIES += libhealthd.msm8916
 # CMHW
 BOARD_HARDWARE_CLASS := \
     hardware/cyanogen/cmhw \
-    $(VENDOR_PATH)/cmhw
-TARGET_TAP_TO_WAKE_NODE := "/sys/touch_screen/easy_wakeup_gesture"
+    $(LOCAL_PATH)/cmhw
 
 #Enable HW based full disk encryption
 TARGET_HW_DISK_ENCRYPTION := true
@@ -145,16 +147,16 @@ BOARD_FLASH_BLOCK_SIZE := 131072 # (BOARD_KERNEL_PAGESIZE * 64)
 TARGET_POWERHAL_VARIANT := qcom
 
 # Properties
-TARGET_SYSTEM_PROP := $(VENDOR_PATH)/system.prop
+TARGET_SYSTEM_PROP := $(LOCAL_PATH)/system.prop
 
 # Qualcomm support
 BOARD_USES_QCOM_HARDWARE := true
 
 # Recovery
-TARGET_RECOVERY_DEVICE_DIRS += $(VENDOR_PATH)
+TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)
 #RECOVERY_VARIANT := twrp
 ifneq ($(RECOVERY_VARIANT),twrp)
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/recovery.fstab
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 else
 TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/twrp.fstab
 RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
@@ -176,7 +178,7 @@ TARGET_RIL_VARIANT := caf
 include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += \
-    $(VENDOR_PATH)/sepolicy
+    $(LOCAL_PATH)/sepolicy
 
 # Time services
 BOARD_USES_QC_TIME_SERVICES := true
