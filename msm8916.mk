@@ -107,7 +107,7 @@ PRODUCT_PACKAGES += \
     camera.msm8916 \
     libmmjpeg_interface \
     libqomx_core \
-    Snap
+    SnapdragonCamera
 
 # Charger
 PRODUCT_PACKAGES += \
