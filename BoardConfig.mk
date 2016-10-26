@@ -154,17 +154,17 @@ TARGET_RECOVERY_DEVICE_DIRS += $(LOCAL_PATH)
 ifneq ($(RECOVERY_VARIANT),twrp)
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/recovery.fstab
 else
-TARGET_RECOVERY_FSTAB := $(VENDOR_PATH)/recovery/twrp.fstab
-RECOVERY_GRAPHICS_FORCE_USE_LINELENGTH := true
-DEVICE_RESOLUTION := 720x1280
+TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/twrp.fstab
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_THEME := portrait_hdpi
 RECOVERY_SDCARD_ON_DATA := true
-TW_NEW_ION_HEAP := true
-TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
-TW_TARGET_USES_QCOM_BSP := true
-TW_EXTRA_LANGUAGES := true
-TW_INPUT_BLACKLIST := "accelerometer\x0alis3dh-accel"
-TARGET_RECOVERY_QCOM_RTC_FIX := true
-BOARD_SUPPRESS_SECURE_ERASE := true
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TWHAVE_SELINUX := true
+TW_BRIGHTNESS_PATH := "/sys/class/leds/lcd-backlight/brightness"
+TW_INCLUDE_CRYPTO := true
+TW_EXTERNAL_STORAGE_PATH := "/external_sd"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "external_sd"
+TW_INPUT_BLACKLIST := "accelerometer"
 endif
 
 # Ril
