@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-$(call inherit-product-if-exists, vendor/huawei/msm8916-common/msm8916-common-vendor.mk)
+$(call inherit-product, vendor/huawei/msm8916_32/msm8916_32-vendor.mk)
 
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay

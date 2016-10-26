@@ -196,4 +196,4 @@ WIFI_DRIVER_FW_PATH_STA := "sta"
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # inherit from the proprietary version
--include vendor/huawei/msm8916-common/BoardConfigVendor.mk
+-include vendor/huawei/msm8916_32/BoardConfigVendor.mk
