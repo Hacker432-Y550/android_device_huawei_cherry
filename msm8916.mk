@@ -196,6 +196,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     power.msm8916
 
+# Imgdiff and bsdiff
+PRODUCT_PACKAGES += \
+    imgdiff \
+    bsdiff
+
 # Ramdisk
 PRODUCT_PACKAGES += \
     fstab.qcom \
