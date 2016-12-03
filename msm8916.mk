@@ -49,7 +49,12 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.vendor.extension_library=libqti-perfd-client.so \
 	persist.radio.apm_sim_not_pwdn=1 \
 	persist.radio.sib16_support=1 \
-	ro.sf.lcd_density=240
+	ro.sf.lcd_density=240 \
+	ro.product.device=y550
+
+# OTA
+PRODUCT_PROPERTY_OVERRIDES += \
+	cm.updater.uri=https://otay550.localtunnel.me/CyanogenModOTA/api
 
 PRODUCT_PROPERTY_OVERRIDES += \
 	dalvik.vm.heapgrowthlimit=128m \
